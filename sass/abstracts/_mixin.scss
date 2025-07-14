@@ -1,0 +1,26 @@
+//mixin con parametros
+@mixin grid ($grid, $columns, $rows){
+    display: $grid;
+    grid-template-columns: $columns;
+    grid-template-rows: $rows;
+}
+@mixin grid-template ($columns, $rows){
+    grid-template-columns: $columns;
+    grid-template-rows: $rows;
+}
+
+//mixin sin parametros
+@mixin flex{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+
+}
+
+//mixin con/sin parametros
+@mixin img($width, $height){
+    width: $width;
+    height: $height;
+    object-fit: cover;
+}

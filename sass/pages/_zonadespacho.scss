@@ -1,0 +1,84 @@
+//variables
+@use "../abstracts/variables" as *;
+//mixin
+@use "../abstracts/mixin" as *;
+
+/* estilos para el html zona de despacho*/
+main{
+    padding: 10px;
+    min-height: 80vh;
+    color: $color-text;
+    h2{
+        text-align: center;
+        font-size: 18px;
+        text-decoration: underline;
+        color: $color-text;
+    }
+}
+.mapa-despacho{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    iframe{
+        width: 100%;
+        height: 300px;
+        border-radius: 10px;
+        max-width: 900px;
+        border: none;
+    }
+}
+
+/*-------------mq para tablet para despacho-----------------------*/
+@media screen and (min-width: 768px){
+    .main-despacho{
+        padding: 30px 40px;
+        min-height: 75vh;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;   
+    }
+    .titulo-despacho{
+        text-align: center;
+        h2{
+            display: flex;
+            margin-left: 30px;
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+    }
+    .mapa-despacho{
+        display: flex;
+        margin-left: 5px;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/*-------------mq para desktop para zona de despacho-----------------------*/
+@media screen and (min-width: 1024px){
+    .main-despacho{
+        padding: 40px 80px;
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+    }
+    .mapa-despacho{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        iframe{
+            width: 100%;
+            max-width: 1000px;
+            height: 500px;
+            border: none;
+            border-radius: 12px;
+        }
+    }
+}

@@ -1,0 +1,54 @@
+//variables
+@use "../abstracts/variables" as *;
+//mixin
+@use "../abstracts/mixin" as *;
+
+/*mq tablet */
+@media screen and (min-width: 768px){
+    header{
+        color: rgba(235,210,174);
+    }
+    main{
+        @include grid-template (repeat(2, 1fr), repeat(2,1fr));
+        gap: 0;
+        .img-tres{
+            display: block;
+        }
+        .img-uno{
+            grid-column: span 2;
+        }
+    }
+}
+
+/*mq desktop*/
+@media screen and (min-width: 1024px){
+    main{
+        @include grid-template ( repeat(3, 1fr), 25% 20% 30% 30%);
+    
+        .img-cuatro{
+            display: block;
+        }
+        .img-uno{
+            grid-column: span 2;
+            grid-row: span 3;
+        }
+        .img-dos, .img-tres{
+            grid-row: span 2;
+        }
+        .img-cuatro{
+            grid-column: span 2;
+        }
+        .menu{
+            ul{
+                a{
+                    font-size: 110%;
+                    margin-right: 30px;
+                }
+            }
+        }
+        .logo img{
+            margin-left: 20px;
+        }
+    }
+
+}
