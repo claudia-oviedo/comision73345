@@ -12,18 +12,21 @@
 .titulo-pedido{
     display: grid;
     text-align: center;
-    color: $color-text;
+    color: black;
     font-size: 15px;
     margin-bottom: 5px;
     text-decoration: underline;
 }
 .grid-productos{
-    @include grid(grid, repeat(3, 30%), repeat(2, 180px));
-    gap: 20px;
+     display: grid;
+     grid-template-columns: 1fr; // 1 columna en móvil
+     gap: 20px;
+     padding: 0 10px;
 }
 .producto{
     border-radius: 10px;
     padding: 10px;
+    color: $color-dark-text;
     img{
         width: 120%;
         height: 120px;
@@ -31,8 +34,9 @@
         gap: 5px;
     }
     h3{
-        font-size: 13px;
-        margin-bottom: 6px;
+        font-size: 14px;
+        margin-bottom: 0.5rem 0;
+        color: inherit;
     }
     p{
         margin-bottom: 7px;
@@ -50,17 +54,14 @@
         font-size: 10px;
     }
     button:hover{
-        background-color: #444;
+        background-color: $color-dark-text;
     }
 }
 
 /*mq para tablet en arma tu pedido*/
 @media screen and (min-width: 768px){
     .grid-productos{
-        @include grid-template (repeat(3, 1fr), repeat(4,1fr));
-        height: 64vh;
-        gap: 20px;
-        margin-right: 20px;
+        grid-template-columns: repeat(2, 1fr);
     }
     .producto{
         height: 70%;
@@ -86,11 +87,7 @@
         text-align: center;
     }
     .grid-productos{
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-        gap: 30px;
-        width: 100%;
-        height: 80%;
+        grid-template-columns: repeat(3, 1fr);
     }
     .producto{
         padding: 10px;
